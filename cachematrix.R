@@ -3,14 +3,14 @@
 
 
 ## This function creates a special matrix object that can cache its inverse. 
-##The special Matrix is created is a list consist of set functions as list elements
+## The special Matrix created is a list that consist of set functions as its elements
 ## to serve different purposes. 
 
 makeCacheMatrix <- function(x = matrix()) {
 
   m <- NULL
   
-  # setting the matrix to 1st argument of set function
+  # setting the matrix to 1st argument of the function
   set <- function(y) {
     x <<- y
     m <<- NULL
@@ -22,10 +22,10 @@ makeCacheMatrix <- function(x = matrix()) {
   # argument sent to the function will be assigned to m
   setinverse <- function(invs) m <<- invs
   
-  # Function is tp retrun value in m ,
+  # Function is to retrun value in m ,
   getinverse <- function() m
   
-  # Making the list with functions
+  # Making the list with functions and return it
   list(set = set , get=get ,setinverse=setinverse ,getinverse=getinverse)
 
 }
